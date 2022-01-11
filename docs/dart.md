@@ -21,10 +21,13 @@
 └── test
     └── two_fer_test.dart // test
 ```
-
+Optional is a class that wraps a value and expresses that the value may be null.
 ## null
 Optional == Nullable
 
+The type system of Dart is Optional.
+
+Optional is a class that wraps a value and expresses that the value may be null.
 ```dart
 // declare
 int? number;
@@ -51,8 +54,6 @@ String? greeting = greetingsByRole[person] ?? greetingsByRole["DEFAULT"];
 
 int currentValue = output[name] ?? 0;
 ```
-
-The type system of Dart is Optional
 
 ```dart
 // !

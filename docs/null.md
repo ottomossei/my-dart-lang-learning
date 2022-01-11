@@ -65,6 +65,7 @@ if (number == null) {
 ## Map
 ```dart
 Map<String, String> profile = {"first": "Go", "last": "Kubo"};
+// forEach
 profile.forEach((key, value) {
   print("${key} is ${value}");
 });

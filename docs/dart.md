@@ -23,6 +23,17 @@
 ```
 
 ## null
+Optional == Nullable
+
+The type system of Dart is Optional
+```dart
+String? myString;
+if (myString != null) {
+   print(myString); //myString still an optional
+   print(myString!); //myString is now a String! (because of the force unwrap)
+}
+```
+
 ```dart
 // declare
 int? number;

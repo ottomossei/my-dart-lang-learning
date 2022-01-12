@@ -4,7 +4,11 @@
   - [directory](#directory)
   - [package](#package)
   - [null](#null)
+  - [arrow function](#arrow-function)
+  - [Callback(Anonymous) function](#callbackanonymous-function)
   - [if](#if)
+  - [for](#for)
+  - [forEach(List)](#foreachlist)
   - [List](#list)
   - [Map](#map)
   - [Map ⇄ List](#map--list)
@@ -93,6 +97,76 @@ if (myString != null) {
 }
 ```
 
+## arrow function
+```dart
+// void
+void change(int i) {
+  i = 2;
+}
+
+void change(int i) => i = 2;
+
+// print
+void change() {
+  print("a");
+}
+
+void change() => print("a");
+```
+
+```dart
+// return
+int change() {
+  return 2;
+}
+
+int change() => 2;
+```
+
+## Callback(Anonymous) function
+Callback functions are used only once.
+```dart
+void myFunc(void Function(String) twoPrint) {
+  List<String> list = ['A', 'B', 'C'];
+  for (String item in list) {
+    twoPrint(item);
+  }
+}
+
+void main() {
+  // Callback
+  myFunc((String s) {
+    print(s);
+    print(s);
+  });
+}
+```
+Callback functions are functions, so variables are not stored.
+```dart
+void myFunc(void Function(String) myPrint) {
+  List<String> list = ['A', 'B', 'C'];
+  for (String item in list) {
+    myPrint(item);
+  }
+}
+
+void main() {
+  myFunc((String s) {
+    String local_s = s;
+    // A B C
+    print(local_s);
+  });
+
+  // Error
+  // Undefined name 's'.
+  print(s);
+  // Error
+  // Undefined name 'local_s'.
+  print(local_s)
+}
+
+```
+
 ## if
 ```dart
 if (number == null) {
@@ -103,6 +177,34 @@ if (number == null) {
   print("else");
 }
 ```
+
+## for
+```dart
+// basic
+for (var i = 0; i < 10; i++) {
+  print(i);
+}
+
+// for-in
+List<String> mixFruit = ['apple', 'banana', 'grape', 'orange'];
+for (String fruit in mixFruit) {
+  print(fruit);
+}
+```
+
+## forEach(List)
+```dart
+// List
+List<String> mixFruit = ['apple', 'banana', 'grape', 'orange'];
+
+mixFruit.forEach((fruit){
+    print(fruit);
+);
+
+// same output (Arrow function)
+mixFruit.forEach((fruit) => print(fruit));
+```
+
 
 ## List
 ```dart

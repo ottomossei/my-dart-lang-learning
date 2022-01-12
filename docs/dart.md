@@ -7,6 +7,7 @@
   - [if](#if)
   - [List](#list)
   - [Map](#map)
+  - [Map ⇄ List](#map--list)
   - [math](#math)
 
 # Github
@@ -106,6 +107,7 @@ if (number == null) {
 ## List
 ```dart
 List<int> nums = [1,2,3,4];
+List<int> nums = [for (var i = 1; i <= 4; i += 1) i];
 
 // 1
 print(nums[0])
@@ -123,6 +125,12 @@ print(nums.sublist(1,3));
 // Change original list
 print(nums.shuffle())
 
+// sort
+// 1 2 3 4 
+print(nums.sort())
+
+// copy
+List<int> copy_nums = [...nums];
 ```
 
 ## Map
@@ -132,6 +140,13 @@ Map<String, String> profile = {"first": "Go", "last": "Kubo"};
 profile.forEach((key, value) {
   print("${key} is ${value}");
 });
+```
+
+## Map ⇄ List
+```dart
+// Map → list
+keys = countedVotes.keys.toList();
+values = countedVotes.keys.toList();
 ```
 
 ## math

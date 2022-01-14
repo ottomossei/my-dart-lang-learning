@@ -7,12 +7,15 @@
   - [arrow function](#arrow-function)
   - [Callback(Anonymous) function](#callbackanonymous-function)
   - [if](#if)
+  - [Avoid if (ternary operator)](#avoid-if-ternary-operator)
   - [for](#for)
   - [forEach(List)](#foreachlist)
   - [List](#list)
   - [Map](#map)
   - [Map ⇄ List](#map--list)
-  - [math](#math)
+  - [math.Random()](#mathrandom)
+  - [StringBuffer](#stringbuffer)
+  - [class](#class)
 
 # Github
 ## PRs
@@ -56,10 +59,8 @@ import '../say/hello.dart';
 
 
 ## null
-Optional == Nullable
-
-The type system of Dart is Optional.
-
+Optional == Nullable  
+The type system of Dart is Optional.  
 Optional is a class that wraps a value and expresses that the value may be null.
 ```dart
 // declare
@@ -98,6 +99,7 @@ if (myString != null) {
 ```
 
 ## arrow function
+a(){} == a()=>;
 ```dart
 // void
 void change(int i) {
@@ -178,6 +180,22 @@ if (number == null) {
 }
 ```
 
+## Avoid if (ternary operator)
+```dart
+main() {
+  String greeting = getGreeting(true);
+}
+
+String getGreeting(bool isMorning) {
+  return isMorning ? "Good Morning" : "Hello";
+  // if (isMorning) {
+    // return "Good Morning";
+  // } else {
+    // return "Hello";
+  // }
+}
+```
+
 ## for
 ```dart
 // basic
@@ -212,27 +230,62 @@ List<int> nums = [1,2,3,4];
 List<int> nums = [for (var i = 1; i <= 4; i += 1) i];
 
 // 1
-print(nums[0])
-print(nums.first)
+nums[0]
+nums.first
 
 // 4
-print(nums.last)
-
-// 2,3
-// (included, not included)
-// Output another list
-print(nums.sublist(1,3));
+nums.last
 
 // randomize index
 // Change original list
-print(nums.shuffle())
+nums.shuffle()
 
 // sort
 // 1 2 3 4 
-print(nums.sort())
+nums.sort()
+
+// add
+// [1,2,3,4,5]
+nums.add(5)
+
+// where
+// Output new Iterable
+// (1, 2)
+var filteredNums = nums.where((e) => e < 3);
+
 
 // copy
 List<int> copy_nums = [...nums];
+
+// map
+// Output new Iterable
+// (11, 12, 13, 14)
+var mappedNums = nums.map((e) => e + 10);
+
+// sublist
+// Output List
+// [1, 2, 3]
+List<int> sublistedNums = nums.sublist(0, 3); 
+
+// fold
+// 10
+// List.fold(initValue, (previousValue, element)) => );
+int sum = nums.fold(0, (previousValue, element) => previousValue + element);
+
+// reversed
+// Output new Iterable
+// (4, 3, 2, 1)
+nums.reversed
+
+// every
+// condition is under all mutch in the list
+// False
+nums.every((item) => item % 2 == 0);
+
+// join
+// Output String
+// 1,2,3,4
+nums.join(',');
 ```
 
 ## Map
@@ -251,7 +304,7 @@ keys = countedVotes.keys.toList();
 values = countedVotes.keys.toList();
 ```
 
-## math
+## math.Random()
 ```dart
 import 'dart:math';
 
@@ -263,4 +316,73 @@ print(Random().nextDouble());
 
 // bool random
 print(Random().nextBool());
+```
+
+## StringBuffer
+You can add String like list.  
+StringBuffer improved more efficiency than String.  
+This is NOT String class.
+```dart
+StringBuffer strbuffer = StringBuffer();
+strbuffer.write("hello");
+strbuffer.writeln();
+strbuffer.write("world");
+// hello
+// world
+print(strbuffer);
+
+String str = strbuffer.toString().toUpperCase();
+// HELLO
+// WORLD
+print(str);
+```
+
+## class
+```dart
+class Book {
+  String title;
+  // "_" means private.
+  // The term "final" cannot be changed later.
+  final bool _isPublished = true;
+  // late : define after instance.
+  // if late isn't written, show error because it is null now.
+  late String description = "Title is $title";
+  // private
+
+  // public
+
+  // constructor
+  // this means "this" class
+  Book(this.title);
+  // named constructor
+  // Book({required.this.title, required.this._isPublished});
+}
+
+// if you use not return, use Book?
+Book? toPhilosophersStone(String title) {
+  if (title == "Harry Potter") {
+    return Book("Harry Potter Philosopher's Stone");
+  }
+}
+
+main() {
+  // instance
+  Book book = Book("Readable Code");
+  // named instance
+  // Book book = Book(title = "Readable Code", isPublished = true);
+  // Readable Code
+  print(book.title);
+  // Title is Readable Code
+  print(book.description);
+  // error because "_" means private.
+  print(book._isPublished);
+  // use "?"
+  Book? harry1 = toPhilosophersStone("Harry Potter");
+  // Harry Potter Philosopher's Stone
+  print(harry1?.title);
+
+  Book? harry2 = toPhilosophersStone("I'm a cat");
+  // null
+  print(harry2?.title);
+}
 ```

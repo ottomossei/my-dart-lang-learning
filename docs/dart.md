@@ -358,6 +358,7 @@ class Book {
   // Book({required.this.title, required.this._isPublished});
 }
 
+// Bookクラスのオブジェクト
 // if you use not return, use Book?
 Book? toPhilosophersStone(String title) {
   if (title == "Harry Potter") {

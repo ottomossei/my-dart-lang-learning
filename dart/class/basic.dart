@@ -1,9 +1,10 @@
 // class
 class Car {
   // propaty
-  String name;
-  String year;
-  String color;
+  // late needs from Car.empty()
+  late String name;
+  late String year;
+  late String color;
 
   // constructor
   // Automatic field initialization
@@ -16,8 +17,16 @@ class Car {
     this.color = color;
   }
 
+  // Car.empty() needs late
+  // because Automatic field initialization is NOT work.
+  Car.empty() {
+    name = "";
+    year = "";
+    color = "";
+  }
+
   // Named Constructors
-  Car.withoutYear({required this.name})
+  Car.withoutYearColor(this.name)
       : year = "2000",
         color = "Yellow";
 
@@ -45,7 +54,12 @@ main() {
   myCar.Horn();
 
   // instance
-  Car yourCar = Car.withoutYear(name: "Nissan");
+  Car emptyCar = Car.empty();
+  //  :  :
+  print("${emptyCar.name} : ${emptyCar.year} : ${emptyCar.color}");
+
+  // instance
+  Car yourCar = Car.withoutYearColor("Nissan");
   // Nissan : 2000 : Yellow
   print("${yourCar.name} : ${yourCar.year} : ${yourCar.color}");
   // Nissan : Poooo!

@@ -9,7 +9,7 @@
 // ① : Define
 String description;
 
-// ② String description == Null
+// ② : String description == Null
 // Error
 void main() {
   description = 'Feijoada!';
@@ -23,10 +23,10 @@ void main() {
 // ① : Define (late)
 late String description;
 
-// ② String description == Null
+// ② : String description == Null
 // "late" will wait for the call.
 void main() {
-  // ③ "description" will be substituted.
+  // ③ : "description" will be substituted.
   description = 'Feijoada!';
   print(description);
 }
@@ -37,10 +37,10 @@ void main() {
 // ① : Define(?)
 String? description;
 
-// ② String description == Null
+// ② : String description == Null
 // "?" allow Null.
 void main() {
-  // ③ "description" will be substituted.
+  // ③ : "description" will be substituted.
   description = 'Feijoada!';
   print(description);
 }

@@ -6,10 +6,10 @@
 
 ## Error
 ```dart
-// 1 : Define
+// ① : Define
 String description;
 
-// 2 String description == Null
+// ② String description == Null
 // Error
 void main() {
   description = 'Feijoada!';
@@ -20,13 +20,13 @@ void main() {
 
 ## late
 ```dart
-// 1 : Define (late)
+// ① : Define (late)
 late String description;
 
-// 2 String description == Null
+// ② String description == Null
 // "late" will wait for the call.
 void main() {
-  // 3 "description" will be substituted.
+  // ③ "description" will be substituted.
   description = 'Feijoada!';
   print(description);
 }
@@ -34,13 +34,13 @@ void main() {
 
 ## ?
 ```dart
-// 1 : Define(?)
+// ① : Define(?)
 String? description;
 
-// 2 String description == Null
-// ? allow Null.
+// ② String description == Null
+// "?" allow Null.
 void main() {
-  // 3 "description" will be substituted.
+  // ③ "description" will be substituted.
   description = 'Feijoada!';
   print(description);
 }

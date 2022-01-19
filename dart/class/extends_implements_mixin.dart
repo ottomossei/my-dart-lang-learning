@@ -21,7 +21,7 @@ class Programmer extends Person {
 }
 
 // implements
-// If the parent class has a must requirement, use "extends".
+// If the parent class has a must requirement, use "implements".
 class Engineer implements Person {
   @override
   final String name;
@@ -36,7 +36,7 @@ class Engineer implements Person {
 
 // abstract
 // "abstruct" is a blueprint of a class.
-// "abstruct" cant be instance.
+// "abstruct" can't be instance.
 abstract class Animal {
   final String name;
   Animal(this.name);

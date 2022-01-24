@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'stl/column.dart';
 import 'package:helloworld/screen_transition/navigator/main.dart';
+import 'package:helloworld/screen_transition/pageview/main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,6 +40,12 @@ class MyAppPage extends StatelessWidget {
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => MyNavigatorApp()));
+            },
+            child: const Text("Navi")),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyPageViewApp()));
             },
             child: const Text("Navi"))
       ],

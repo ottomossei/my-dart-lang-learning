@@ -1,6 +1,10 @@
 /*
 Navigator 
 Push & Popで、stackなページ遷移を実現
+Scaffoldのbodyだけを遷移などはせず、
+全画面ごと遷移する。
+そのため、各ページにScaffoldを記載する必要がある
+
 onPressed: () => {
                       Navigator.of(context)
                           .push(MaterialPageRoute(builder: (context) {

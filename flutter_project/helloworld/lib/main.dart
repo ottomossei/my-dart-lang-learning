@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'stl/column.dart';
+import 'package:helloworld/screen_transition/navigator/main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,13 @@ class MyAppPage extends StatelessWidget {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const ColumnPage()));
             },
-            child: const Text("Column"))
+            child: const Text("Column")),
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyNavigatorApp()));
+            },
+            child: const Text("Navi"))
       ],
     );
   }

@@ -41,6 +41,6 @@ class MyNavigatorPage extends StatefulWidget {
 class _MyNavigatorPageState extends State<MyNavigatorPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: TestPage1());
+    return Scaffold(body: TestNavigatorPage1());
   }
 }

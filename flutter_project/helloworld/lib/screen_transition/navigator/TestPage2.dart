@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/screen_transition/navigator/TestPage3.dart';
 
-class TestPage2 extends StatelessWidget {
+class TestNavigatorPage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +15,7 @@ class TestPage2 extends StatelessWidget {
               onPressed: () => {
                     Navigator.of(context)
                         .push(MaterialPageRoute(builder: (context) {
-                      return TestPage3();
+                      return TestNavigatorPage3();
                     }))
                   },
               child: Text("進む", style: TextStyle(fontSize: 80))),

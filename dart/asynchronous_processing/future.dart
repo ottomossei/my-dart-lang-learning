@@ -15,7 +15,7 @@ void test01() {
 
 Future<String> fstring() {
   // 2秒遅れてStringを返す
-  return Future.delayed(const Duration(seconds: 1), () => "2sec");
+  return Future.delayed(const Duration(seconds: 2), () => "2sec");
 }
 
 void test02() {
@@ -24,7 +24,14 @@ void test02() {
   print(value);
 }
 
+Future<void> test03() async {
+  // 2秒待って表示
+  String value = await fstring();
+  print(value);
+}
+
 void main(List<String> args) {
   // test01();
-  test02();
+  // test02();
+  test03();
 }

@@ -13,6 +13,18 @@ void test01() {
   waitOrder();
 }
 
+Future<String> fstring() {
+  // 2秒遅れてStringを返す
+  return Future.delayed(const Duration(seconds: 1), () => "2sec");
+}
+
+void test02() {
+  // Instance of 'Future<String>'
+  Future<String> value = fstring();
+  print(value);
+}
+
 void main(List<String> args) {
-  test01();
+  // test01();
+  test02();
 }

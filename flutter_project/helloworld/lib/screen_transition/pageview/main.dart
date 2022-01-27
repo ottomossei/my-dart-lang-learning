@@ -1,5 +1,8 @@
 /*
 PageView
+Navigatorを使用せず、ページ遷移する
+MyPageViewAppに３つのページが内包されており、その中の選択を
+
 
 
 

@@ -47,7 +47,7 @@ class MyAppPage extends StatelessWidget {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => MyPageViewApp()));
             },
-            child: const Text("Navi"))
+            child: const Text("PageView"))
       ],
     );
   }

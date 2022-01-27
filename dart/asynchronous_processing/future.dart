@@ -19,7 +19,7 @@ Future<String> fstring() {
 }
 
 void test02() {
-  // Instance of 'Future<String>'
+  // 即座にInstance of 'Future<String>'が表示
   Future<String> value = fstring();
   print(value);
 }

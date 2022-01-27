@@ -4,9 +4,9 @@ class TestPage2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Test2"),
-        ),
+        // appBar: AppBar(
+        //   title: Text("Test2"),
+        // ),
         body: Center(
             child: Container(
                 color: Colors.greenAccent,

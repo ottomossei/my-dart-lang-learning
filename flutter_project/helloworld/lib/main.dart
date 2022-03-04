@@ -28,31 +28,36 @@ class MyAppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ElevatedButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const ColumnPage()));
-            },
-            child: const Text("Column")),
-        ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MyNavigatorApp()));
-            },
-            child: const Text("Navi")),
-        ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MyPageViewApp()));
-            },
-            child: const Text("PageView"))
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ColumnPage()));
+              },
+              child: const Text("Column")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyNavigatorApp()));
+              },
+              child: const Text("Navi")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyPageViewApp()));
+              },
+              child: const Text("PageView"))
+        ],
+      ),
     );
   }
 }

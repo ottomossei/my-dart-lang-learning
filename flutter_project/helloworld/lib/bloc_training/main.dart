@@ -1,8 +1,3 @@
-/*
-要件：
-ボタンを押すと、それに応じてアイコンが変更される。
-*/
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:helloworld/bloc_training/event.dart';

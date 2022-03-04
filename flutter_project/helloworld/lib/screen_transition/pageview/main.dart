@@ -1,13 +1,13 @@
 /*
 PageView
 Navigatorを使用せず、ページ遷移する
-MyPageViewAppに３つのページが内包されており、その中の選択を
-
-
-
+MyPageViewAppに３つのページが内包されており、
+遷移すると、onPageChangedでsetStateの_selectedIndexが変更され、
+PageControllerが変更を取得、その通りにページを変更させる
 
 https://zenn.dev/kazutxt/books/flutter_practice_introduction/viewer/beginner_page
 */
+
 import 'package:flutter/material.dart';
 import 'test_page1.dart';
 import 'test_page2.dart';

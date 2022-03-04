@@ -11,4 +11,4 @@ jobs:
       - name: check in helloworld project
         run: cd flutter_project/helloworld
         run: flutter pub get
-      - run: flutter analyze --fatal-infos --fatal-warnings .
+        run: flutter analyze --fatal-infos --fatal-warnings .

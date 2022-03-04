@@ -9,11 +9,13 @@ MyPageViewAppに３つのページが内包されており、その中の選択�
 https://zenn.dev/kazutxt/books/flutter_practice_introduction/viewer/beginner_page
 */
 import 'package:flutter/material.dart';
-import 'TestPage1.dart';
-import 'TestPage2.dart';
-import 'TestPage3.dart';
+import 'test_page1.dart';
+import 'test_page2.dart';
+import 'test_page3.dart';
 
 class MyPageViewApp extends StatelessWidget {
+  const MyPageViewApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,13 +23,13 @@ class MyPageViewApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
 
   @override
@@ -39,10 +41,10 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   // ボトムメニューの遷移先画面
-  var _pages = [
-    TestPage1(),
-    TestPage2(),
-    TestPage3(),
+  final _pages = [
+    const TestPage1(),
+    const TestPage2(),
+    const TestPage3(),
   ];
   @override
   void initState() {

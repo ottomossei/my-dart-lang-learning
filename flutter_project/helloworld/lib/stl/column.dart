@@ -51,8 +51,8 @@ class ColumnBody extends StatelessWidget {
         // Containerの中でExpandedは使える
         // Containerはchildが精一杯使える分までサイズを使う
         // const Containerが使えない
-        Container(
-          child: const Card(
+        const SizedBox(
+          child: Card(
             child: Text("width=200"),
           ),
           width: 200,

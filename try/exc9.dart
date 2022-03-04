@@ -38,7 +38,7 @@ main() {
     print(output.toString());
   }
 
-  // showHistogram();
+  showHistogram();
   List<int> showTiming = [
     100,
     1000,

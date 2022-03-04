@@ -16,9 +16,11 @@ onPressed: () => {Navigator.of(context).pop()},
 https://zenn.dev/kazutxt/books/flutter_practice_introduction/viewer/beginner_page
 */
 import 'package:flutter/material.dart';
-import 'package:helloworld/screen_transition/navigator/TestPage1.dart';
+import 'package:helloworld/screen_transition/navigator/test_page1.dart';
 
 class MyNavigatorApp extends StatelessWidget {
+  const MyNavigatorApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,13 +28,13 @@ class MyNavigatorApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyNavigatorPage(title: 'Flutter Demo Home Page'),
+      home: const MyNavigatorPage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
 class MyNavigatorPage extends StatefulWidget {
-  MyNavigatorPage({Key? key, required this.title}) : super(key: key);
+  const MyNavigatorPage({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
   _MyNavigatorPageState createState() => _MyNavigatorPageState();
@@ -41,6 +43,6 @@ class MyNavigatorPage extends StatefulWidget {
 class _MyNavigatorPageState extends State<MyNavigatorPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: TestNavigatorPage1());
+    return const Scaffold(body: TestNavigatorPage1());
   }
 }

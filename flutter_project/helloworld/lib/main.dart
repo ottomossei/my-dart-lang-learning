@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'bloc_training/main.dart';
 import 'stl/column.dart';
 import 'package:helloworld/screen_transition/navigator/main.dart';
 import 'package:helloworld/screen_transition/pageview/main.dart';
@@ -55,7 +56,15 @@ class MyAppPage extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const MyPageViewApp()));
               },
-              child: const Text("PageView"))
+              child: const Text("PageView")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyPageIconChangeApp()));
+              },
+              child: const Text("IconChangeByBLoC"))
         ],
       ),
     );

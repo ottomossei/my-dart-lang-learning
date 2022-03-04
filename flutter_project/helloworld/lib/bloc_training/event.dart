@@ -1,5 +1,5 @@
-abstract class IconEvent {}
+abstract class TapIconEvent {}
 
-class SunnyEvent extends IconEvent {}
+class TapSunnyEvent extends TapIconEvent {}
 
-class RainyEvent extends IconEvent {}
+class TapCloudEvent extends TapIconEvent {}

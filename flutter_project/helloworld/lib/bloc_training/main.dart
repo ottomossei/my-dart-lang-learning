@@ -15,17 +15,17 @@ class MyPageIconChangeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (context) => IconBloc(),
-        child: MaterialApp(
-          home: Scaffold(
-            appBar: AppBar(
-              title: const Text('IconChangeByBLoC'),
-            ),
-            backgroundColor: Colors.white,
-            body: const IconPage(),
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text('IconChangeByBLoC'),
           ),
-        ));
+          backgroundColor: Colors.white,
+          body: BlocProvider(
+            create: (context) => IconBloc(),
+            child: const IconPage(),
+          )),
+    );
   }
 }
 
@@ -34,26 +34,37 @@ class IconPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconBloc = context.watch<IconBloc>();
     return Center(
-        child: BlocBuilder<IconBloc, IconState>(builder: (context, state) {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text("Which do you like?"),
-          FloatingActionButton(
-            onPressed: () => iconBloc.add(SunnyEvent()),
-            tooltip: 'Decrement',
-            child: const Icon(Icons.remove),
-          ),
-          const SizedBox(width: 10),
-          FloatingActionButton(
-            onPressed: () => iconBloc.add(RainyEvent()),
-            tooltip: 'Increment',
-            child: const Icon(Icons.add),
-          ),
-        ],
-      );
-    }));
+        child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text("Which do you like?"),
+        const SizedBox(height: 30),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FloatingActionButton(
+              heroTag:
+                  "hero1", // unique tag to distinguish FloatingActionButton
+              onPressed: () => context.read<IconBloc>().add(TapSunnyEvent()),
+              tooltip: 'Sunny',
+              child: const Icon(Icons.wb_sunny),
+            ),
+            const SizedBox(width: 30),
+            FloatingActionButton(
+              heroTag:
+                  "hero2", // unique tag to distinguish FloatingActionButton
+              onPressed: () => context.read<IconBloc>().add(TapCloudEvent()),
+              tooltip: 'Cloud',
+              child: const Icon(Icons.cloud),
+            ),
+          ],
+        ),
+        const SizedBox(height: 30),
+        BlocBuilder<IconBloc, AnswerState>(builder: (context, state) {
+          return Text(state.answer);
+        })
+      ],
+    ));
   }
 }

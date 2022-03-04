@@ -1,8 +1,12 @@
-abstract class IconState {
-  final int icon;
-  const IconState(this.icon);
+abstract class AnswerState {
+  final String answer;
+  const AnswerState(this.answer);
 }
 
-class IconInitial extends IconState {
-  IconInitial(int icon) : super(icon);
+class AnswerInit extends AnswerState {
+  AnswerInit() : super("No Data");
+}
+
+class AnswerChange extends AnswerState {
+  AnswerChange(String answer) : super(answer);
 }

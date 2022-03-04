@@ -10,5 +10,4 @@ jobs:
       - uses: subosito/flutter-action@v1
       - name: check in helloworld project
         working-directory: ./flutter_project/helloworld
-        run: flutter pub get
-        run: flutter analyze --fatal-infos --fatal-warnings .
+        run: flutter pub get && flutter analyze --fatal-infos --fatal-warnings .
